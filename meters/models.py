@@ -5,12 +5,10 @@ from django.db import models
 
 class Meters(models.Model):
 
-    customerName = models.CharField(max_length=100, blank=False)
-    customerAddress = 
-    meterNumber = models.CharField(max_length=100, blank=False)
-    rateName = models.CharField(max_length=100, blank=False)
-    dayRate = 
-    nightRate = models.IntegerField()
-    weekendRate =  models.IntegerField()
-
-
+    customer_name = models.CharField(max_length=100, blank=False)
+    default_street_address1 = models.CharField(max_length=80, null=True, blank=True)
+    meter_number = models.CharField(max_length=100, blank=False)
+    rate_name = models.CharField(max_length=100, blank=False)
+    day_rate = models.IntegerField()
+    night_rate = models.IntegerField()
+    weekend_Rate = models.IntegerField()
