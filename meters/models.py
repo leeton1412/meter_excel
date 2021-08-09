@@ -12,3 +12,6 @@ class Meters(models.Model):
     day_rate = models.IntegerField()
     night_rate = models.IntegerField()
     weekend_Rate = models.IntegerField()
+
+    def __str__(self):
+        return self.customer_name
