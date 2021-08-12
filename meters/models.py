@@ -12,10 +12,24 @@ class Meters(models.Model):
     day_rate = models.FloatField(max_length=100, null=True)
     night_rate = models.FloatField(null=True)
     weekend_rate = models.FloatField(null=True)
+    weekend_night_rate = models.FloatField(null=True)
+    weekend_day_rate = models.FloatField(null=True)
     cost_for_day_rate = models.FloatField(null=True)
     cost_for_night_rate = models.FloatField(null=True)
     cost_for_weekend_rate = models.FloatField(null=True)
+    cost_for_weekend_day_rate = models.FloatField(null=True)
+    cost_for_weekend_night_rate = models.FloatField(null=True)
     total_energy_cost = models.FloatField(null=True)
+    first_reading_day = models.IntegerField(null=True)
+    second_reading_day = models.IntegerField(null=True)
+    first_reading_night = models.IntegerField(null=True)
+    second_reading_night = models.IntegerField(null=True)
+    first_reading_weekend = models.IntegerField(null=True)
+    second_reading_weekend = models.IntegerField(null=True)
+    first_weekend_day = models.IntegerField(null=True)
+    second_weekend_day = models.IntegerField(null=True)
+    first_weekend_night = models.IntegerField(null=True)
+    second_weekend_night = models.IntegerField(null=True)
 
-    #def __str__(self):
-        #return self.customer_name
+    def __str__(self):
+        return self.customer_name
