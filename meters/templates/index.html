@@ -28,7 +28,11 @@
   </table>
 
 <div class="container">
-  {{ contactForm }}
+  <form action="" class="form-control form-group django-table">
+  {% csrf_token %}
+  {{ form.as_table }}
+  </form>
+
 </div>
 
 

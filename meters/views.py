@@ -13,11 +13,9 @@ def index(request):
 def data(request):
     items = Meters.objects.all()
     form = contactForm()
-    print(contactForm)
-    print(form)
     context = {
         'items': items,
-        'contactForm': form,
+        'form': form,
     }
     
     return render(request, 'index.html', context)
