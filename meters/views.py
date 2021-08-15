@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Meters
-from .forms import contactForm
+from .forms import highestDay, highestNight, highestTotal
 
 # Create your views here.
 
@@ -12,10 +12,14 @@ def index(request):
 
 def data(request):
     items = Meters.objects.all()
-    form = contactForm()
+    high_day = highestDay()
+    high_night = highestNight()
+    high_total = highestTotal()
     context = {
         'items': items,
-        'form': form,
+        'high_day': high_day,
+        'high_night': high_night,
+        'high_total': high_total,
     }
     
     return render(request, 'index.html', context)
