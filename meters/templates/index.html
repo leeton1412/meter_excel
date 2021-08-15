@@ -10,33 +10,34 @@
         <th scope="col">Customer Name</th>
         <th scope="col">Customer Address</th>
         <th scope="col">Meter Number</th>
-        <th scope="col">Rate Name</th>
-        <th scope="col">First Reading</th>
+        <th scope="col">Day Rate</th>
+        <th scope="col">Night Rate</th>
+        <th scope="col">Weekend Rate</th>
       </tr>
     </thead>
     <tbody>
       {% for item in items %}
         <tr>
-          <td>{{ item.customer_name }}</td>
-          <td>{{ item.customer_address }}</td>
-          <td>{{ item.meter_number }}</td>
-          <td>{{ item.day_rate }}</td>
-          <td>{{ item.night_rate }}</td>
-          <td>{{ item.weekend_Rate }}</td>
+          <td class="name">{{ item.customer_name }}</td>
+          <td class="address">{{ item.customer_address }}</td>
+          <td class="meter">{{ item.meter_number }}</td>
+          <td class="day">{{ item.day_rate }}</td>
+          <td class="night">{{ item.night_rate }}</td>
+          <td class="weekend">{{ item.weekend_rate }}</td>
         </tr>
       {% endfor %}
   </table>
 
 <div class="container">
-<form action="" class="form-control form-group django-table"> 
+<form action="" class="form-control form-group django-table" id="day" > 
   {% csrf_token %}
   {{ high_day.as_table }}
 </form>
-<form action="" class="form-control form-group django-table">
+<form action="" class="form-control form-group django-table" id="night" >
   {% csrf_token %}
   {{ high_night.as_table }}
 </form>
-<form action="" class="form-control form-group django-table">
+<form action="" class="form-control form-group django-table" id="total" >
   {% csrf_token %}
   {{ high_total.as_table }}
 </form>
