@@ -2,8 +2,8 @@ from django import forms
 
 
 class highestDay(forms.Form):
-    name = forms.CharField(label='Customer Name')
-    day_rate_high = forms.FloatField(label='Highest Day Rate')
+    name = forms.CharField(label='Customer Name',required=False)
+    day_rate_high = forms.FloatField(label='Highest Day Rate',required=False)
 
 
 class highestNight(forms.Form):

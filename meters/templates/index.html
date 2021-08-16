@@ -4,7 +4,7 @@
 {% block content %}
 <!--Customer Information-->
 <a href="{% url 'data' %}" class="btn btn-primary">Data</a>
-<table class="table table-hover">
+<table class="table table-hover" id="data">
     <thead>
       <tr>
         <th scope="col">Customer Name</th>
@@ -32,6 +32,7 @@
 <form action="" class="form-control form-group django-table" id="day" > 
   {% csrf_token %}
   {{ high_day.as_table }}
+  <button onclick="onClick"></button>
 </form>
 <form action="" class="form-control form-group django-table" id="night" >
   {% csrf_token %}
@@ -44,5 +45,11 @@
 
 </div>
 
+<script>
+  function onClick(){
+    var name = $("#data").find('.name').text();
+    console.log(name);
+}
 
+</script>
 {% endblock %}

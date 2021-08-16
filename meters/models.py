@@ -31,5 +31,5 @@ class Meters(models.Model):
     first_weekend_night = models.IntegerField(null=True)
     second_weekend_night = models.IntegerField(null=True)
 
-    #def __str__(self):
-        #return self.customer_name
+    def __str__(self):
+        return self.customer_name
